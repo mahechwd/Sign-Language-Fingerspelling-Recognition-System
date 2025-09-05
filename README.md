@@ -4,6 +4,8 @@
 
 This software uses a webcam to detect and classify American Sign Language (ASL) fingerspelling gestures in real time. It provides an interactive learning environment where users can practise spelling words and receive instant feedback. The system is built using Python, OpenCV, TensorFlow, and CVZone for hand tracking and classification.
 
+<img width="956" height="763" alt="Image" src="https://github.com/user-attachments/assets/9747773c-2838-4443-9c75-13b2ec13dc88" />
+
 ---
 
 ## 🔬 Brief Project Flow 📝
@@ -26,6 +28,9 @@ The system captures hand gestures via webcam, processes the images, and uses a t
 
 ## 🧠 Model Training
 
+![Image](https://github.com/user-attachments/assets/e5de8666-87d6-4862-8c3a-75fbcf51ab0a)
+<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/03e9ad0e-f9e7-4400-892b-27f36be887f7" />
+
 - **Architecture**: CNN with Conv2D, MaxPooling2D, Flatten, Dense, and Dropout layers
 - **Training**: Used TensorFlow/Keras with data augmentation (rotation, shifts, shear, zoom, flip)
 - **Performance**: Achieved **95.33% test accuracy** after hyperparameter tuning and dataset refinement
@@ -34,6 +39,8 @@ The system captures hand gestures via webcam, processes the images, and uses a t
 ---
 
 ## 🖥️ GUI and Interactive Learning
+
+<img width="1919" height="1009" alt="Image" src="https://github.com/user-attachments/assets/ab0aff4e-acae-43b7-ae2c-95a3bc26d657" />
 
 - **Real-Time Feedback**: Displays recognised letter, accuracy percentage, and instructional messages
 - **Word Practice**: Users spell words from a predefined list (`words.txt`), progressing letter-by-letter
