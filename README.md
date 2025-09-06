@@ -2,7 +2,7 @@
 
 ## Real-time Recognition Demo 🎥🤖
 
-<img width="906" height="793" alt="Image" src="https://github.com/user-attachments/assets/c6e217b0-a33a-4674-893f-47f5e44e6d70" />
+<img width="956" height="763" alt="Image" src="https://github.com/user-attachments/assets/c6e217b0-a33a-4674-893f-47f5e44e6d70" />
 
 - This system uses computer vision to interpret sign language fingerspelling in real-time. The image shows continuous alphabet recognition with visual feedback.
 
@@ -10,14 +10,14 @@
 
 - Building a robust sign language recognition system requires accurate hand detection, feature extraction, and classification. This project implements a complete pipeline for recognizing fingerspelled letters in real-time.
 
-- Refer to the [GitHub repo](https://github.com/your-username/sign-language-recognition) for the complete code.
+- Refer to the [GitHub repo](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System) for the complete code.
 
 1. **Data Collection & Preprocessing 📸**
    - 1.1 Collect hand gesture images using [MediaPipe](https://google.github.io/mediapipe/) for hand landmark detection and **OpenCV** for video processing
    
    - 1.2 Create a diverse dataset covering various hand sizes, skin tones, and lighting conditions:
   
-   ![Hand Landmark Detection](hand_landmarks.png)
+   ![Hand Landmark Detection](![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec))
      
 3. **Feature Extraction & Processing 🔍**
    - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand)
@@ -28,11 +28,11 @@
    
    - 2.4 Each frame produces a feature vector representing hand configuration ✋
 
-4. **Model Architecture 🧠**
+4. **Model Workflow 🧠**
    
- ![Model Architecture](model_architecture.png)
+ ![Model Workflow](<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/05ffce64-f1e9-464e-b425-3715bb3ac0af" />)
 
-6. **Training Pipeline ☁️**
+5. **Training Pipeline ☁️**
    - The system uses [TensorFlow](https://www.tensorflow.org/) for model training, with options for both cloud and local training environments
    - Data augmentation techniques include rotation, scaling, and background variation to improve generalization
    - Hyperparameter tuning performed using validation split and cross-validation techniques
@@ -47,9 +47,9 @@
 
 4. **Temporal processing**: For continuous recognition, implement sliding window approach to analyze gesture sequences over time.
 
-5. **Real-time Optimization ⚡**
+5. **System Workflow ⚡**
    
-   ![Processing Pipeline](processing_pipeline.png)
+   ![Processing Pipeline](<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/ef74913f-2e40-486a-b7a5-5fc75d163c3f" />)
 
 The system prioritizes recent frames with higher weights 📊 while maintaining context from previous frames.
 
@@ -72,15 +72,14 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
 
 ## Performance & Results 📊
 
-- Current model achieves X% accuracy on test dataset
-- Real-time performance of Y FPS on [hardware specification]
-- Comparison with baseline models shows Z% improvement
+- Current model achieves 95.3% accuracy on test dataset
+- Comparison with baseline models shows 11% improvement
 
 ## Future Work and Summary
 - The current model performs well but could benefit from additional training data and diversity
 - Future work includes expanding to complete sign language words and phrases
 - Mobile deployment optimization for accessibility applications
-- Multi-hand recognition for two-handed sign languages
+- Multi-hand recognition for two-handed sign languages (extension to BSL)
 
 ## Applications 🌟
 - Educational tools for sign language learning
@@ -89,5 +88,5 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
 
 ## References 📚
 1. [MediaPipe Hands: On-device Real-time Hand Tracking](https://arxiv.org/abs/2006.10214)
-2. [Sign Language Recognition: A Deep Survey](https://example.com/sign-language-survey)
-3. [Real-time American Sign Language Recognition](https://example.com/asl-real-time)
+
+_For more information please refer to the [documentation](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System/blob/main/documentation.pdf)_
