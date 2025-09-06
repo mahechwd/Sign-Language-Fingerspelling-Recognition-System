@@ -48,7 +48,7 @@
 
 4. **Temporal processing**: For continuous recognition, implement sliding window approach to analyze gesture sequences over time.
 
-5. **System Workflow**
+5. **System Workflow:**
    
    <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/ef74913f-2e40-486a-b7a5-5fc75d163c3f" />
 
@@ -72,6 +72,8 @@ The system prioritizes recent frames with higher weights while maintaining conte
    - Hardware acceleration support for various deployment environments.
 
 ## Performance & Results
+
+![Image](https://github.com/user-attachments/assets/e269bd91-a4fc-43d1-bd29-1128751557c6)
 
 - Current model achieves 95.3% accuracy on test dataset.
 - Comparison with baseline models shows 11% improvement.
