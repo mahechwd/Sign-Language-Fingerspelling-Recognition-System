@@ -2,7 +2,7 @@
 
 ## Real-time Recognition Demo 🎥🤖
 
-<img width="906" height="713" alt="Image" src="https://github.com/user-attachments/assets/c6e217b0-a33a-4674-893f-47f5e44e6d70" />
+<img width="906" height="733" alt="Image" src="https://github.com/user-attachments/assets/c6e217b0-a33a-4674-893f-47f5e44e6d70" />
 
 - This system uses computer vision to interpret sign language fingerspelling in real-time. The image shows continuous alphabet recognition with visual feedback.
 
