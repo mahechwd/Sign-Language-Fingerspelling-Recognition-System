@@ -17,7 +17,7 @@
    
    - 1.2 Create a diverse dataset covering various hand sizes, skin tones, and lighting conditions:
   
-   ![Hand Landmark Detection](![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec))
+   ![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec)
      
 3. **Feature Extraction & Processing 🔍**
    - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand)
@@ -30,7 +30,7 @@
 
 4. **Model Workflow 🧠**
    
- ![Model Workflow](<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/05ffce64-f1e9-464e-b425-3715bb3ac0af" />)
+ <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/05ffce64-f1e9-464e-b425-3715bb3ac0af" />
 
 5. **Training Pipeline ☁️**
    - The system uses [TensorFlow](https://www.tensorflow.org/) for model training, with options for both cloud and local training environments
@@ -49,7 +49,7 @@
 
 5. **System Workflow ⚡**
    
-   ![Processing Pipeline](<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/ef74913f-2e40-486a-b7a5-5fc75d163c3f" />)
+   <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/ef74913f-2e40-486a-b7a5-5fc75d163c3f" />
 
 The system prioritizes recent frames with higher weights 📊 while maintaining context from previous frames.
 
