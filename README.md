@@ -1,94 +1,47 @@
-# Sign Language Fingerspelling Recognition System 🤟📷
+# Sign Language Fingerspelling Recognition System
 
-*Real-time ASL fingerspelling recognition and interactive learning tool*
-
-This software uses a webcam to detect and classify American Sign Language (ASL) fingerspelling gestures in real time. It provides an interactive learning environment where users can practise spelling words and receive instant feedback. The system is built using Python, OpenCV, TensorFlow, and CVZone for hand tracking and classification.
-
-<img width="956" height="763" alt="Image" src="https://github.com/user-attachments/assets/9747773c-2838-4443-9c75-13b2ec13dc88" />
+A simple, camera-based ASL fingerspelling recognition and learning environment.  
+This repo contains data collection helpers, a dataset organiser, a training script for a CNN classifier, and a lightweight real-time app that detects a hand, draws a bounding box, and shows the predicted letter with a confidence score.
 
 ---
 
-## 🔬 Brief Project Flow 📝
+## Brief Project Flow - TL;DR
+- Capture many labelled images of your hand using `dataCollection.py` (300 images per letter by default). Images are saved as 300×300 jpgs.  
+- Run `folderSort.py` to split the collected images into `train/`, `validation/` and `test/` using an 80/10/10 split.  
+- Train a CNN classifier using `trainClassifier.py` (Keras `ImageDataGenerator` for augmentation + training). Produces `model.h5`.  
+- Run `main.py` to start the live recognition GUI. The app uses a hand detector to localise the hand, crops and normalises the hand image, gets a prediction from the classifier, then draws the bounding box, label and confidence on the frame.
 
-The system captures hand gestures via webcam, processes the images, and uses a trained convolutional neural network (CNN) to classify the ASL letter. The GUI provides real-time feedback, instructional messages, and a structured learning experience.
-
----
-
-## 📸 Dataset Collection
-
-1. **Data Capture**:
-   - Used a custom Python script (`dataCollection.py`) to capture hand images for each ASL letter (excluding J and Z due to movement requirements)
-   - Images were cropped, resized to 300x300 pixels, and centered on a white background
-   - 300 images per letter were collected (total 7,200 images)
-
-2. **Data Splitting**:
-   - Dataset split into 80% training, 10% validation, and 10% test sets using a custom sorting script (`folderSort.py`)
+<img width="956" height="763" alt="Image" src="https://github.com/user-attachments/assets/d19e8bef-a306-403c-ab53-2e465931ed28" />
 
 ---
 
-## 🧠 Model Training
-
-![Image](https://github.com/user-attachments/assets/e5de8666-87d6-4862-8c3a-75fbcf51ab0a)
-<img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/03e9ad0e-f9e7-4400-892b-27f36be887f7" />
-
-- **Architecture**: CNN with Conv2D, MaxPooling2D, Flatten, Dense, and Dropout layers
-- **Training**: Used TensorFlow/Keras with data augmentation (rotation, shifts, shear, zoom, flip)
-- **Performance**: Achieved **95.33% test accuracy** after hyperparameter tuning and dataset refinement
-- **Output**: Model saved as `model.h5` for real-time inference
+## Dataset & Collection Notes
+- `dataCollection.py` captures images from a webcam. Press `s` to save a labelled image and `r` to advance to the next letter folder. Default target is **300 images per letter** saved to `Data/<LETTER>/`.  
+- `folderSort.py` moves images into `Data/train/<LETTER>/`, `Data/validation/<LETTER>/` and `Data/test/<LETTER>/` using an 80/10/10 split (for example 240 train / 30 val / 30 test per letter at 300 images per letter).
 
 ---
 
-## 🖥️ GUI and Interactive Learning
-
-<img width="1919" height="1009" alt="Image" src="https://github.com/user-attachments/assets/ab0aff4e-acae-43b7-ae2c-95a3bc26d657" />
-
-- **Real-Time Feedback**: Displays recognised letter, accuracy percentage, and instructional messages
-- **Word Practice**: Users spell words from a predefined list (`words.txt`), progressing letter-by-letter
-- **Skip Functionality**: Press `L` to skip a letter, `W` to skip a word
-- **GUI Design**: Clean interface with colour-coded elements (HEX: #FFE3B3 background, #752092 text)
-- **Instructions**: Contextual prompts guide hand placement and provide positive reinforcement
+## Data Processing & Model Summary
+- Input flow: capture frame -> detect hand -> crop to bounding box -> resize to classifier input size (300×300) -> classifier predicts letter + confidence -> overlay results on GUI.  
+- Training uses `tensorflow.keras.preprocessing.image.ImageDataGenerator` with augmentation (rotation, shifts, shear, zoom, horizontal flip) and rescales to [0,1]. Target size is 300×300.  
+- The trained model is saved as `model.h5`. `labels.txt` and `words.txt` support mapping and practice words.
 
 ---
 
-## 🛠️ Technical Setup
-
-- **Languages**: Python 3.9
-- **Libraries**: OpenCV, CVZone, MediaPipe, TensorFlow, NumPy
-- **Hardware**: Webcam (720p+), Windows 10/11, Intel Core i3+
-- **Key Files**:
-  - `main.py` – Main application
-  - `trainClassifier.py` – Model training
-  - `dataCollection.py` – Image capture
-  - `folderSort.py` – Dataset organisation
+## Tests & success criteria
+- System tested across common scenarios. Most static letters are correctly classified in controlled lighting. 
+- The app is tolerant of moderate motion blur and handles multiple hands by selecting the strongest detection.
 
 ---
 
-## ✅ Features
-
-- Real-time hand detection and bounding box tracking
-- Live accuracy feedback and letter prediction
-- Interactive word-based learning with skip options
-- Customisable word list via `words.txt`
-- Responsive GUI with instructional messages
+## Known Limitations
+- Letters that require motion, such as `J` and `Z`, are not reliably classified by a static-image classifier. These are currently exceptions.
+- Project focuses on ASL fingerspelling only and does not attempt full sign language recognition. Full sign recognition requires facial expression and body modelling plus much more data.
+- Accuracy is sensitive to lighting, background and hand distance to the camera. See the documentation for suggested thresholds and workarounds.
 
 ---
 
-## 📚 References
-
-- Inspired by existing solutions like [fingerspelling.xyz](https://fingerspelling.xyz)
-- Uses CVZone HandTracker and Classifier modules
-- Built with TensorFlow for CNN-based classification
-
----
-
-## 🔮 Future Improvements
-
-- Support for dynamic signs (e.g., J, Z)
-- Multi-hand detection
-- Integration with video conferencing tools
-- Expanded sign language support (BSL, ISL, etc.)
-
----
-
-*This project was developed as part of the OCR A-Level Computer Science NEA.*
-*Refer to the full documentation above for detailed analysis, design, and testing.*
+## Future work ideas
+- Add temporal modelling to handle motion letters `J` and `Z`.
+- Integrate a continuous decoder so full words and phrases can be detected instead of single letters
+- Build a plugin for web conferencing to offer live translation in meetings, subject to privacy considerations.
