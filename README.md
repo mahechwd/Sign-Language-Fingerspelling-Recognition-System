@@ -75,7 +75,7 @@ The system prioritizes recent frames with higher weights while maintaining conte
 
 ![Image](https://github.com/user-attachments/assets/e269bd91-a4fc-43d1-bd29-1128751557c6)
 
-- Current model achieves 95.3% accuracy on test dataset
+- Current model achieves 95.3% accuracy on test dataset.
 - Comparison with baseline models shows 11% improvement.
 
 ## Future Work and Summary
