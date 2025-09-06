@@ -13,29 +13,29 @@
 - Refer to the [GitHub repo](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System) for the complete code.
 
 1. **Data Collection & Preprocessing 📸**
-   - 1.1 Collect hand gesture images using [MediaPipe](https://google.github.io/mediapipe/) for hand landmark detection and **OpenCV** for video processing
+   - 1.1 Collect hand gesture images using [MediaPipe](https://google.github.io/mediapipe/) for hand landmark detection and **OpenCV** for video processing.
    
    - 1.2 Create a diverse dataset covering various hand sizes, skin tones, and lighting conditions:
   
    ![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec)
      
 3. **Feature Extraction & Processing 🔍**
-   - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand)
+   - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand).
    
-   - 2.2 **Feature engineering**: Calculate relative distances, angles, and positional features from landmarks
+   - 2.2 **Feature engineering**: Calculate relative distances, angles, and positional features from landmarks.
    
-   - 2.3 **Normalization**: Scale and rotate hand positions for orientation invariance
+   - 2.3 **Normalization**: Scale and rotate hand positions for orientation invariance.
    
-   - 2.4 Each frame produces a feature vector representing hand configuration ✋
+   - 2.4 Each frame produces a feature vector representing hand configuration ✋.
 
 4. **Model Workflow 🧠**
    
  <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/05ffce64-f1e9-464e-b425-3715bb3ac0af" />
 
 5. **Training Pipeline ☁️**
-   - The system uses [TensorFlow](https://www.tensorflow.org/) for model training, with options for both cloud and local training environments
-   - Data augmentation techniques include rotation, scaling, and background variation to improve generalization
-   - Hyperparameter tuning performed using validation split and cross-validation techniques
+   - The system uses [TensorFlow](https://www.tensorflow.org/) for model training, with options for both cloud and local training environments.
+   - Data augmentation techniques include rotation, scaling, and background variation to improve generalization.
+   - Hyperparameter tuning performed using validation split and cross-validation techniques.
 
 ## Dataset Construction 🗂️
 
@@ -56,37 +56,37 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
 ## Model Structure Discussion 🏗️
 
 0. **Architecture Overview**
-   - The model combines spatial feature extraction with temporal context understanding for continuous recognition
+   - The model combines spatial feature extraction with temporal context understanding for continuous recognition.
 
 1. **Spatial Feature Extraction**
-   - Use convolutional layers and fully connected networks to process hand landmark spatial relationships
-   - Implement attention mechanisms to focus on critical hand regions for different letters
+   - Use convolutional layers and fully connected networks to process hand landmark spatial relationships.
+   - Implement attention mechanisms to focus on critical hand regions for different letters.
 
 2. **Temporal Processing**
-   - For continuous recognition, employ LSTM or Transformer layers to understand gesture sequences
-   - Implement sequence-to-sequence modeling for fluent fingerspelling recognition
+   - For continuous recognition, employ LSTM or Transformer layers to understand gesture sequences.
+   - Implement sequence-to-sequence modeling for fluent fingerspelling recognition.
 
 3. **Efficiency Optimizations**
-   - Model pruning and quantization for real-time performance
-   - Hardware acceleration support for various deployment environments
+   - Model pruning and quantization for real-time performance.
+   - Hardware acceleration support for various deployment environments.
 
 ## Performance & Results 📊
 
-- Current model achieves 95.3% accuracy on test dataset
-- Comparison with baseline models shows 11% improvement
+- Current model achieves 95.3% accuracy on test dataset.
+- Comparison with baseline models shows 11% improvement.
 
 ## Future Work and Summary
-- The current model performs well but could benefit from additional training data and diversity
-- Future work includes expanding to complete sign language words and phrases
-- Mobile deployment optimization for accessibility applications
-- Multi-hand recognition for two-handed sign languages (extension to BSL)
+- The current model performs well but could benefit from additional training data and diversity.
+- Future work includes expanding to complete sign language words and phrases.
+- Mobile deployment optimization for accessibility applications.
+- Multi-hand recognition for two-handed sign languages (extension to BSL).
 
 ## Applications 🌟
-- Educational tools for sign language learning
-- Accessibility technology for hearing-impaired communication
-- Human-computer interaction interfaces
+- Educational tools for sign language learning.
+- Accessibility technology for hearing-impaired communication.
+- Human-computer interaction interfaces.
 
 ## References 📚
 1. [MediaPipe Hands: On-device Real-time Hand Tracking](https://arxiv.org/abs/2006.10214)
 
-_For more information please refer to the [documentation](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System/blob/main/documentation.pdf)_
+_For more information please refer to the [documentation](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System/blob/main/documentation.pdf)._
