@@ -1,34 +1,35 @@
 # Sign Language Fingerspelling Recognition System
 
-## Real-time Recognition Demo 🎥🤖
+## Real-time Recognition Demo
 
 <img width="956" height="763" alt="Image" src="https://github.com/user-attachments/assets/c6e217b0-a33a-4674-893f-47f5e44e6d70" />
 
 - This system uses computer vision to interpret sign language fingerspelling in real-time. The image shows continuous alphabet recognition with visual feedback.
 
-## 🔬 Project Overview 📝
+## Project Overview
 
 - Building a robust sign language recognition system requires accurate hand detection, feature extraction, and classification. This project implements a complete pipeline for recognizing fingerspelled letters in real-time.
 
 - Refer to the [GitHub repo](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System) for the complete code.
 
-1. **Data Collection & Preprocessing 📸**
+1. **Data Collection & Preprocessing **
    - 1.1 Collect hand gesture images using [MediaPipe](https://google.github.io/mediapipe/) for hand landmark detection and **OpenCV** for video processing.
    
    - 1.2 Create a diverse dataset covering various hand sizes, skin tones, and lighting conditions:
   
    ![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec)
      
-3. **Feature Extraction & Processing 🔍**
+3. **Feature Extraction & Processing **
    - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand).
+      ![](https://mediapipe.dev/images/mobile/hand_landmarks.png)
    
    - 2.2 **Feature engineering**: Calculate relative distances, angles, and positional features from landmarks.
    
    - 2.3 **Normalization**: Scale and rotate hand positions for orientation invariance.
    
-   - 2.4 Each frame produces a feature vector representing hand configuration ✋.
+   - 2.4 Each frame produces a feature vector representing hand configuration.
 
-4. **Model Workflow 🧠**
+4. **Model Workflow**
    
  <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/05ffce64-f1e9-464e-b425-3715bb3ac0af" />
 
@@ -37,7 +38,7 @@
    - Data augmentation techniques include rotation, scaling, and background variation to improve generalization.
    - Hyperparameter tuning performed using validation split and cross-validation techniques.
 
-## Dataset Construction 🗂️
+## Dataset Construction 
 
 1. The **input features** are [hand_landmarks, relative_distances, angles]. The processed data contains normalized spatial information about hand configuration.
 
@@ -47,13 +48,13 @@
 
 4. **Temporal processing**: For continuous recognition, implement sliding window approach to analyze gesture sequences over time.
 
-5. **System Workflow ⚡**
+5. **System Workflow**
    
    <img width="959" height="540" alt="Image" src="https://github.com/user-attachments/assets/ef74913f-2e40-486a-b7a5-5fc75d163c3f" />
 
-The system prioritizes recent frames with higher weights 📊 while maintaining context from previous frames.
+The system prioritizes recent frames with higher weights while maintaining context from previous frames.
 
-## Model Structure Discussion 🏗️
+## Model Structure Discussion
 
 0. **Architecture Overview**
    - The model combines spatial feature extraction with temporal context understanding for continuous recognition.
@@ -70,7 +71,7 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
    - Model pruning and quantization for real-time performance.
    - Hardware acceleration support for various deployment environments.
 
-## Performance & Results 📊
+## Performance & Results
 
 - Current model achieves 95.3% accuracy on test dataset.
 - Comparison with baseline models shows 11% improvement.
@@ -81,12 +82,12 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
 - Mobile deployment optimization for accessibility applications.
 - Multi-hand recognition for two-handed sign languages (extension to BSL).
 
-## Applications 🌟
+## Applications
 - Educational tools for sign language learning.
 - Accessibility technology for hearing-impaired communication.
 - Human-computer interaction interfaces.
 
-## References 📚
+## References
 1. [MediaPipe Hands: On-device Real-time Hand Tracking](https://arxiv.org/abs/2006.10214)
 
 _For more information please refer to the [documentation](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System/blob/main/documentation.pdf)._
