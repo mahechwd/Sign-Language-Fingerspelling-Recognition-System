@@ -94,9 +94,5 @@ The system prioritizes recent frames with higher weights 📊 while maintaining 
 
 ## References 📚
 1. [MediaPipe Hands: On-device Real-time Hand Tracking](https://arxiv.org/abs/2006.10214)
-
 2. [Sign Language Recognition: A Deep Survey](https://example.com/sign-language-survey)
-
 3. [Real-time American Sign Language Recognition](https://example.com/asl-real-time)
-
-This template follows the same structure, tone, and formatting style as your Clash Royale README, with appropriate technical details for a sign language recognition project. You can fill in the specific details, GitHub links, and image references once you have them available.
