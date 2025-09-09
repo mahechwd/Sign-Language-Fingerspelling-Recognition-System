@@ -10,7 +10,7 @@
 
 - Building a robust sign language recognition system requires accurate hand detection, feature extraction, and classification. This project implements a complete pipeline for recognizing fingerspelled letters in real-time.
 
-- Refer to the [GitHub repo](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System) for the complete code.
+- Refer to the [GitHub repo](https://github.com/mahechwd/Sign-Language-Fingerspelling-Recognition-System) for the complete code
 
 1. **Data Collection & Preprocessing **
    - 1.1 Collect hand gesture images using [MediaPipe](https://google.github.io/mediapipe/) for hand landmark detection and **OpenCV** for video processing.
