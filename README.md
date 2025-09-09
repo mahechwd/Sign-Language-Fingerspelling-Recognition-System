@@ -20,7 +20,7 @@
    ![Image](https://github.com/user-attachments/assets/0e19c589-4561-4bc2-88a2-31758a9687ec)
      
 3. **Feature Extraction & Processing **
-   - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand).
+   - 2.1 **Landmark detection**: Use MediaPipe Hands to extract 3D hand landmarks (21 points per hand)
       ![](https://mediapipe.dev/images/mobile/hand_landmarks.png)
    
    - 2.2 **Feature engineering**: Calculate relative distances, angles, and positional features from landmarks.
